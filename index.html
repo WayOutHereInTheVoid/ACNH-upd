@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACNH HHA Optimizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ACNH HHA Optimizer</h1>
+    </header>
+
+    <main class="container">
+        <!-- Configuration Section -->
+        <section class="config-section card">
+            <h2>House Configuration</h2>
+            <div class="form-group">
+                <label for="house-level">House Level:</label>
+                <select id="house-level">
+                    <option value="Tent">Tent (No HHA)</option>
+                    <option value="House upgrade">House upgrade</option>
+                    <option value="House size upgrade">House size upgrade</option>
+                    <option value="Back Room Addition">Back Room Addition</option>
+                    <option value="Left Room Addition">Left Room Addition</option>
+                    <option value="Right Room Addition">Right Room Addition</option>
+                    <option value="Second Floor Addition">Second Floor Addition</option>
+                    <option value="Basement Addition" selected>Basement Addition</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="current-season">Current Season:</label>
+                <select id="current-season">
+                    <option value="None">None</option>
+                    <option value="Spring">Spring</option>
+                    <option value="Summer">Summer</option>
+                    <option value="Autumn">Autumn</option>
+                    <option value="Winter">Winter</option>
+                </select>
+            </div>
+
+            <div class="score-display">
+                <h3>Total HHA Score: <span id="total-score">0</span></h3>
+                <p>Current Rank: <span id="current-rank">-</span></p>
+                <p>Next Rank at: <span id="next-rank-score">-</span></p>
+            </div>
+
+            <div id="bonuses-breakdown" class="bonuses-breakdown">
+                <!-- Breakdown of points will be injected here -->
+            </div>
+        </section>
+
+        <!-- Room Management Section -->
+        <section class="room-section card">
+            <h2>Rooms</h2>
+            <div class="room-tabs" id="room-tabs">
+                <button class="room-tab active" data-room="Main Room">Main Room</button>
+                <button class="room-tab" data-room="Back Room">Back Room</button>
+                <button class="room-tab" data-room="Left Room">Left Room</button>
+                <button class="room-tab" data-room="Right Room">Right Room</button>
+                <button class="room-tab" data-room="Second Floor">Second Floor</button>
+                <button class="room-tab" data-room="Basement">Basement</button>
+            </div>
+
+            <div class="room-penalties">
+                <label><input type="number" id="trash-count" value="0" min="0"> Trash items</label>
+                <label><input type="number" id="roach-count" value="0" min="0"> Cockroaches</label>
+                <label><input type="number" id="dropped-count" value="0" min="0"> Dropped items</label>
+                <label><input type="number" id="facing-wall-count" value="0" min="0"> Items facing wall</label>
+            </div>
+
+            <div class="room-contents">
+                <h3>Items in <span id="current-room-name">Main Room</span> (<span id="room-item-count">0</span>)</h3>
+                <ul id="room-items-list" class="item-list">
+                    <!-- Items will be injected here -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Search and Add Section -->
+        <section class="search-section card">
+            <h2>Add Items</h2>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for an item...">
+                <button id="search-btn">Search</button>
+            </div>
+
+            <div class="placement-options">
+                <label>Placement:
+                    <select id="placement-select">
+                        <option value="Floor">Floor (General)</option>
+                        <option value="East">East Wall (2 squares within)</option>
+                        <option value="South">South Wall (2 squares within)</option>
+                        <option value="West">West Wall (2 squares within)</option>
+                        <option value="Wall">Hanging on Wall</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="search-results">
+                <ul id="search-results-list" class="item-list">
+                    <!-- Search results will be injected here -->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
