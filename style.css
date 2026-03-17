@@ -1,10 +1,14 @@
 :root {
-    --primary-color: #55c8a1;
-    --secondary-color: #f7e8b6;
-    --text-color: #5a4b3d;
-    --bg-color: #f0f4f0;
-    --card-bg: #ffffff;
+    --primary-color: #2e8b57;
+    --secondary-color: #505c4b;
+    --text-color: #e0e0e0;
+    --text-muted: #aaaaaa;
+    --bg-color: #1a1a1a;
+    --card-bg: #2d2d2d;
     --border-radius: 12px;
+    --border-color: #444;
+    --input-bg: #3a3a3a;
+    --penalty-bg: #4a2b2b;
 }
 
 body {
@@ -59,6 +63,7 @@ h2 {
     border-radius: var(--border-radius);
     text-align: center;
     margin-bottom: 1rem;
+    color: #fff;
 }
 
 .score-display h3 {
@@ -83,8 +88,8 @@ h2 {
 }
 
 .room-tab {
-    background: #e0e0e0;
-    border: none;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     cursor: pointer;
@@ -96,6 +101,7 @@ h2 {
 .room-tab.active {
     background: var(--primary-color);
     color: white;
+    border-color: var(--primary-color);
 }
 
 .room-penalties {
@@ -104,7 +110,7 @@ h2 {
     gap: 1rem;
     margin-bottom: 1rem;
     padding: 1rem;
-    background: #ffeeee;
+    background: var(--penalty-bg);
     border-radius: var(--border-radius);
 }
 
@@ -112,6 +118,14 @@ h2 {
     display: flex;
     align-items: center;
     font-size: 0.9rem;
+}
+
+.room-penalties input, select {
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 4px;
+    padding: 0.25rem;
 }
 
 .room-penalties input {
@@ -128,8 +142,14 @@ h2 {
 .search-bar input {
     flex: 1;
     padding: 0.5rem;
-    border: 1px solid #ccc;
+    background: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
     border-radius: 4px;
+}
+
+.search-bar input::placeholder {
+    color: var(--text-muted);
 }
 
 .search-bar button {
@@ -159,7 +179,7 @@ h2 {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .item-list li:last-child {
@@ -176,7 +196,7 @@ h2 {
 
 .item-details {
     font-size: 0.8rem;
-    color: #777;
+    color: var(--text-muted);
 }
 
 .item-actions button {

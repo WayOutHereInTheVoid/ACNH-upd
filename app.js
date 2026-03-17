@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const li = document.createElement('li');
             li.innerHTML = `
                 <div class="item-info">
-                    <div class="item-name">${item.name} <span style="font-size:0.8em; color:#666;">[${item.placement}]</span></div>
+                    <div class="item-name">${item.name} <span style="font-size:0.8em; color:var(--text-muted);">[${item.placement}]</span></div>
                     <div class="item-details">Base: ${item.hha_base_points || 0} | Series: ${item.hha_series || 'None'} | Concept: ${item.hha_concept_1 || 'None'}</div>
                 </div>
                 <div class="item-actions">
